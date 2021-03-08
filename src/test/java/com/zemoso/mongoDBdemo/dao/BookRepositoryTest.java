@@ -17,14 +17,14 @@ public class BookRepositoryTest {
 
     @Test
     public void booksTest() {
-
         Book book = new Book();
-        book.setTitle("Maths");
-        book.setIsbn("324");
-        book.setNoPages(674);
+        book.setId(UUID.randomUUID());
+        book.setTitle("social science");
+        book.setIsbn("4574");
+        book.setNoPages(100);
 
-        UUID id = mongoTemplate.save(book, "books").getId();
-        Book bookInfo = mongoTemplate.findById(id.toString(), Book.class, "books");
+        UUID id=mongoTemplate.save(book, "books").getId();
+        Book bookInfo = mongoTemplate.findById(id, Book.class, "books");
         Assert.notNull(bookInfo, "bookInfo must not be null");
 
     }

@@ -1,4 +1,5 @@
-package com.zemoso.mongoDBdemo.dao.generator;
+package com.zemoso.mongoDBdemo.entity.id.generator;
+
 
 import com.zemoso.mongoDBdemo.entity.Book;
 import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
-public class BookIdGenerator extends AbstractMongoEventListener<Book> {
+public class BookEntityEventListener extends AbstractMongoEventListener<Book> {
 
     @Override
     public void onBeforeConvert(BeforeConvertEvent<Book> event) {
